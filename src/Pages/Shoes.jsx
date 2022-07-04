@@ -22,6 +22,7 @@ const Shoes = () => {
   const [checkLoafers, setCheckLoafers] = useState(false);
   const [checkCanvas, setCheckCanvas] = useState(false);
   const [checkBoots, setCheckBoots] = useState(false);
+  // const [showShoes, setShowShoes] = useState([]);
   const dispatch = useDispatch();
   const shoes = useSelector((state) => state.shoes);
   const getShoes = () => {
@@ -38,22 +39,39 @@ const Shoes = () => {
   //   dispatch(shoeList());
   // }, [dispatch]);
   // console.log(shoes);
-  const showShoes = shoes;
-  // if (checkBoots && checkCanvas && checkLoafers && checkSneakers) {
-  //   showShoes = shoes;
-  // } else {
-  // if (checkBoots) {
-  //   showShoes.push(
-  //     shoes.filter((item) => (item.category === "Boots" ? true : false))
-  //   );
-  // }
-  // }
+  let showShoes = [];
+  if (checkBoots || checkCanvas || checkLoafers || checkSneakers) {
+    if (checkBoots) {
+      shoes
+        .filter((item) => (item.category === "Boots" ? true : false))
+        .map((item) => showShoes.push(item));
+    }
+    if (checkCanvas) {
+      shoes
+        .filter((item) => (item.category === "Canvas" ? true : false))
+        .map((item) => showShoes.push(item));
+    }
+    if (checkLoafers) {
+      shoes
+        .filter((item) => (item.category === "Loafers" ? true : false))
+        .map((item) => showShoes.push(item));
+    }
+    if (checkSneakers) {
+      shoes
+        .filter((item) => (item.category === "Sneakers" ? true : false))
+        .map((item) => showShoes.push(item));
+    }
+    showShoes.sort((a, b) => a.id - b.id);
+  } else {
+    // setShowShoes(shoes);
+    showShoes = shoes;
+  }
 
   useEffect(() => {
     if (shoes.length === 0) {
       getShoes();
     }
-  }, []);
+  }, [showShoes]);
   console.log(showShoes);
 
   return (
