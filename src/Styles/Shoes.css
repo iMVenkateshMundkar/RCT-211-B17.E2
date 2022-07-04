@@ -1,0 +1,52 @@
+.shoes__all {
+    width: 80%;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+}
+
+.shoes__info {
+    border: 1px solid #171717;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    max-height: 320px;
+}
+
+.shoes__image {
+    /* object-fit: contain; */
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    height:85%;
+}
+
+.shoes__info div{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+}
+
+.shoes__name, .shoes__ctgry {
+    margin: 0;
+    padding: 0;
+}
+
+.shoes__name {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.shoes__ctgry {
+    font-size: 1.1rem;
+    margin-top: 7px;
+    font-weight: 600;
+}
+
+.shoes__ctgry span {
+    margin-left: 10px;
+    font-weight: 350;
+}
+a {
+    text-decoration: none;
+    color: #171717;
+}

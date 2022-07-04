@@ -1,0 +1,12 @@
+.singleshoe {
+    width: 50%;
+    height: 300px;
+    margin: 2rem auto;
+}
+
+.singleshoe img {
+    width: 50%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+}
